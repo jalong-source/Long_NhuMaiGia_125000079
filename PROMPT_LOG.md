@@ -136,6 +136,23 @@
 
 ---
 
+### Lần 9: Tinh chỉnh cơ chế phát nhạc độc quyền qua bàn Mixer & Chuyển đổi bộ điều khiển Theme thành Floating Settings Bubble
+- **Prompt đã dùng:**  
+  *"Bỏ cái bong bóng chạm để phát ở dưới đi, nhạc chỉ phát khi click play ở mixer thôi, đưa giao diện sáng tối và theme màu vào bong bóng đó."*
+- **Các cải tiến kỹ thuật thực hiện:**  
+  1. **Tối ưu trải nghiệm âm thanh (Mixer-Only Playback):**  
+     - Loại bỏ hoàn toàn cơ chế tự động phát nhạc khi chạm vào trang (first interaction trigger) và gỡ bỏ bong bóng audio player cũ.  
+     - Nhạc Tokyo Drift Remix giờ đây **chỉ phát khi người dùng chủ động nhấn nút Play trên bàn Mixer Studio** (Deck A hoặc Deck B).  
+     - Trạng thái nút bấm Play trên Mixer đổi sang class `active`, chuyển text thành `Pause` và icon `fa-pause`. Đĩa than trên Hero console và sóng âm Equalizer xoay và nhảy đồng bộ theo trạng thái bài nhạc.  
+  2. **Tái cấu trúc Floating Settings Bubble:**  
+     - Chuyển toàn bộ cụm điều khiển giao diện (Nút chuyển Sáng/Tối 🌙/☀️ và 5 chấm màu Palette) từ thanh Header xuống thành một **Bong bóng nổi (Floating Theme Bubble)** cố định ở góc dưới bên phải màn hình.  
+     - Header trở nên tối giản, thanh thoát và tập trung hoàn toàn vào thanh điều hướng và nút CTA "Mở Mixer".  
+     - Bong bóng cài đặt hiển thị đẹp mắt với hiệu ứng kính mờ (Glassmorphism), viền LED neon phát sáng, cho phép người dùng đổi màu sắc và chuyển Dark/Light mode linh hoạt bất kể đang ở vị trí nào trên trang.
+- **Kết quả AI tạo ra:**  
+  Bố cục website đạt độ tinh tế cao, thao tác bật nhạc trực quan gắn liền với bàn Mixer đúng tinh thần DJ Studio, giao diện tùy biến màu sắc và sáng tối hoạt động trơn tru.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 ### AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?

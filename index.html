@@ -44,24 +44,8 @@
         </ul>
       </nav>
 
-      <!-- Theme Controls & Quick CTA -->
+      <!-- Quick CTA -->
       <div class="header-actions">
-        <div class="theme-controls" aria-label="Bộ điều khiển giao diện">
-          <!-- Color Palette Picker -->
-          <div class="color-palette-picker" title="Chọn màu sắc chủ đạo">
-            <button type="button" class="color-dot dot-gold active" data-color="gold" aria-label="Màu Vàng Neon"></button>
-            <button type="button" class="color-dot dot-cyan" data-color="cyan" aria-label="Màu Xanh Cyan"></button>
-            <button type="button" class="color-dot dot-pink" data-color="pink" aria-label="Màu Hồng Neon"></button>
-            <button type="button" class="color-dot dot-green" data-color="green" aria-label="Màu Xanh Lá"></button>
-            <button type="button" class="color-dot dot-purple" data-color="purple" aria-label="Màu Tím"></button>
-          </div>
-
-          <!-- Dark / Light Mode Toggle Button -->
-          <button type="button" class="btn-theme-mode" id="theme-mode-btn" aria-label="Chuyển chế độ sáng/tối" title="Chuyển chế độ Sáng / Tối">
-            <i class="fa-solid fa-moon"></i>
-          </button>
-        </div>
-
         <a href="#studio-player" class="btn btn-primary animate__animated animate__pulse animate__infinite">
           <i class="fa-solid fa-play"></i> Mở Mixer
         </a>
@@ -159,7 +143,7 @@
               <span class="deck-badge">DECK A (MASTER)</span>
               <span class="bpm-tag">126 BPM</span>
             </div>
-            <h3 class="deck-track-name">Midnight Lo-Fi Chill.mp3</h3>
+            <h3 class="deck-track-name"><i class="fa-solid fa-music"></i> Tokyo Drift (Remix).mp3</h3>
             <div class="slider-group">
               <label for="eq-low-a">BASS / LOW</label>
               <input type="range" id="eq-low-a" class="custom-slider" min="0" max="100" value="75">
@@ -173,7 +157,7 @@
               <input type="range" id="eq-high-a" class="custom-slider" min="0" max="100" value="85">
             </div>
             <div class="deck-buttons">
-              <button type="button" class="btn btn-ctrl btn-play active"><i class="fa-solid fa-play"></i> Play</button>
+              <button type="button" class="btn btn-ctrl btn-play" id="mixer-play-btn-a"><i class="fa-solid fa-play"></i> Play</button>
               <button type="button" class="btn btn-ctrl"><i class="fa-solid fa-rotate-left"></i> Cue</button>
               <button type="button" class="btn btn-ctrl"><i class="fa-solid fa-repeat"></i> Loop</button>
             </div>
@@ -617,20 +601,23 @@
     </div>
   </footer>
 
-  <!-- ==================== FLOATING TOKYO DRIFT AUDIO PLAYER ==================== -->
-  <aside class="floating-audio-player" id="floating-audio-widget" aria-label="Bộ điều khiển nhạc Tokyo Drift">
-    <button type="button" class="audio-toggle-btn" id="audio-toggle-btn" aria-label="Phát hoặc tạm dừng nhạc Tokyo Drift" title="Phát / Tạm dừng Tokyo Drift">
-      <span class="disc-spin-icon" id="audio-disc-icon">
-        <i class="fa-solid fa-compact-disc"></i>
-      </span>
-      <span class="audio-info-label">
-        <span class="audio-track-title">Tokyo Drift Remix</span>
-        <span class="audio-status-tag" id="audio-status-tag"><i class="fa-solid fa-volume-xmark"></i> Chạm để phát</span>
-      </span>
-      <span class="audio-play-icon" id="audio-play-icon">
-        <i class="fa-solid fa-play"></i>
-      </span>
-    </button>
+  <!-- ==================== FLOATING THEME & COLOR CONTROLLER BUBBLE ==================== -->
+  <aside class="floating-theme-widget" id="floating-theme-bubble" aria-label="Bộ điều khiển giao diện & Màu sắc">
+    <div class="theme-bubble-container">
+      <!-- Dark / Light Mode Toggle Button -->
+      <button type="button" class="btn-bubble-mode" id="theme-mode-btn" aria-label="Chuyển chế độ sáng/tối" title="Chuyển chế độ Sáng / Tối">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <!-- Color Palette Dots -->
+      <div class="bubble-palette" title="Chọn màu sắc chủ đạo">
+        <button type="button" class="color-dot dot-gold active" data-color="gold" aria-label="Màu Vàng Neon" title="Vàng Neon"></button>
+        <button type="button" class="color-dot dot-cyan" data-color="cyan" aria-label="Màu Xanh Cyan" title="Xanh Cyan"></button>
+        <button type="button" class="color-dot dot-pink" data-color="pink" aria-label="Màu Hồng Neon" title="Hồng Neon"></button>
+        <button type="button" class="color-dot dot-green" data-color="green" aria-label="Màu Xanh Lá" title="Xanh Lá"></button>
+        <button type="button" class="color-dot dot-purple" data-color="purple" aria-label="Màu Tím" title="Tím Neon"></button>
+      </div>
+    </div>
   </aside>
 
   <!-- ==================== LIBRARIES & SCRIPTS ==================== -->
@@ -646,128 +633,88 @@
     });
 
     // ==========================================
-    // TOKYO DRIFT AUDIO CONTROLLER (GITHUB PAGES COMPATIBLE)
+    // TOKYO DRIFT AUDIO CONTROLLER (CHỈ PHÁT KHI CLICK PLAY Ở MIXER)
     // ==========================================
-    (function initTokyoDriftAudio() {
-      // Đường dẫn tương đối chuẩn xác, không có dấu / ở đầu để tương thích tuyệt đối với GitHub Pages repository path
+    (function initTokyoDriftMixerAudio() {
       const audioPath = 'assets/tokyo-drift.mp3';
       const bgAudio = new Audio();
       bgAudio.src = audioPath;
       bgAudio.preload = 'auto';
       bgAudio.loop = true;
+      bgAudio.volume = 0.75;
 
-      // Giữ âm lượng vừa phải, không tự ý đẩy to
-      bgAudio.volume = 0.7;
-
-      let isPlaying = false;
-      let hasFirstInteracted = false;
-
-      const audioToggleBtn = document.getElementById('audio-toggle-btn');
-      const audioPlayIcon = document.getElementById('audio-play-icon');
-      const audioStatusTag = document.getElementById('audio-status-tag');
-      const audioDiscIcon = document.getElementById('audio-disc-icon');
+      const mixerPlayBtns = document.querySelectorAll('.deck-buttons .btn-play');
       const spinningVinyl = document.querySelector('.spinning-vinyl');
       const heroTrackTrigger = document.getElementById('hero-track-trigger');
       const heroLiveIndicator = document.getElementById('hero-live-indicator');
       const heroLiveText = document.getElementById('hero-live-text');
 
-      // Ban đầu khi trang vừa tải: không tự phát tiếng, đĩa than ở trạng thái tạm dừng
       if (spinningVinyl) spinningVinyl.style.animationPlayState = 'paused';
 
       function updateUI(playing) {
-        isPlaying = playing;
-        if (playing) {
-          if (audioPlayIcon) audioPlayIcon.innerHTML = '<i class="fa-solid fa-pause"></i>';
-          if (audioStatusTag) audioStatusTag.innerHTML = '<i class="fa-solid fa-volume-high"></i> Đang phát';
-          if (audioDiscIcon) audioDiscIcon.classList.add('spinning');
-          if (spinningVinyl) spinningVinyl.style.animationPlayState = 'running';
-          if (heroLiveIndicator) heroLiveIndicator.classList.add('active');
-          if (heroLiveText) heroLiveText.textContent = 'ON AIR';
-        } else {
-          if (audioPlayIcon) audioPlayIcon.innerHTML = '<i class="fa-solid fa-play"></i>';
-          if (audioStatusTag) audioStatusTag.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> Tạm dừng';
-          if (audioDiscIcon) audioDiscIcon.classList.remove('spinning');
-          if (spinningVinyl) spinningVinyl.style.animationPlayState = 'paused';
-          if (heroLiveIndicator) heroLiveIndicator.classList.remove('active');
-          if (heroLiveText) heroLiveText.textContent = 'PAUSED';
-        }
-      }
-
-      function startPlayback() {
-        try {
-          const playPromise = bgAudio.play();
-          if (playPromise !== undefined) {
-            playPromise.then(() => {
-              updateUI(true);
-            }).catch(error => {
-              // Bắt lỗi nhẹ nhàng (ví dụ policy trình duyệt hoặc chưa load xong), không làm hỏng trang
-              console.warn('Phát audio nhẹ nhàng bỏ qua lỗi:', error);
-              updateUI(false);
-            });
+        mixerPlayBtns.forEach(btn => {
+          if (playing) {
+            btn.classList.add('active');
+            btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
+          } else {
+            btn.classList.remove('active');
+            btn.innerHTML = '<i class="fa-solid fa-play"></i> Play';
           }
-        } catch (e) {
-          console.warn('Lỗi audio:', e);
-          updateUI(false);
+        });
+
+        if (spinningVinyl) {
+          spinningVinyl.style.animationPlayState = playing ? 'running' : 'paused';
+        }
+
+        if (heroLiveIndicator) {
+          if (playing) {
+            heroLiveIndicator.classList.add('active');
+          } else {
+            heroLiveIndicator.classList.remove('active');
+          }
+        }
+
+        if (heroLiveText) {
+          heroLiveText.textContent = playing ? 'ON AIR' : 'PAUSED';
         }
       }
 
-      function stopPlayback() {
-        try {
+      function togglePlay() {
+        if (bgAudio.paused) {
+          try {
+            const playPromise = bgAudio.play();
+            if (playPromise !== undefined) {
+              playPromise.then(() => updateUI(true)).catch(err => {
+                console.warn('Lỗi phát nhạc:', err);
+                updateUI(false);
+              });
+            }
+          } catch (e) {
+            console.warn(e);
+            updateUI(false);
+          }
+        } else {
           bgAudio.pause();
           updateUI(false);
-        } catch (e) {
-          console.warn(e);
         }
       }
 
-      // Tự động phát nhạc đúng 1 lần sau lần nhấn hoặc chạm đầu tiên của người dùng ở bất kỳ đâu trên trang
-      function onFirstUserInteraction() {
-        if (hasFirstInteracted) return;
-        hasFirstInteracted = true;
-
-        // Gỡ bỏ ngay lập tức các listener để không kích hoạt thêm lần nào
-        window.removeEventListener('click', onFirstUserInteraction, { capture: true });
-        window.removeEventListener('touchstart', onFirstUserInteraction, { capture: true });
-        window.removeEventListener('keydown', onFirstUserInteraction, { capture: true });
-
-        startPlayback();
-      }
-
-      // Lắng nghe ở capture: true mà KHÔNG gọi stopPropagation hay preventDefault -> các nút/link/mixer hoạt động 100% bình thường
-      window.addEventListener('click', onFirstUserInteraction, { capture: true, once: true });
-      window.addEventListener('touchstart', onFirstUserInteraction, { capture: true, once: true });
-      window.addEventListener('keydown', onFirstUserInteraction, { capture: true, once: true });
-
-      // Nút điều khiển Bật/Tắt rõ ràng cho người dùng
-      if (audioToggleBtn) {
-        audioToggleBtn.addEventListener('click', (e) => {
-          hasFirstInteracted = true;
-          if (bgAudio.paused) {
-            startPlayback();
-          } else {
-            stopPlayback();
-          }
+      // Gắn sự kiện: Nhạc CHỈ PHÁT khi click nút Play ở Mixer (hoặc click vào track ở Hero)
+      mixerPlayBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          togglePlay();
         });
-      }
+      });
 
       if (heroTrackTrigger) {
-        heroTrackTrigger.addEventListener('click', () => {
-          hasFirstInteracted = true;
-          if (bgAudio.paused) {
-            startPlayback();
-          } else {
-            stopPlayback();
-          }
-        });
+        heroTrackTrigger.addEventListener('click', togglePlay);
       }
 
-      // Khi kết thúc bài (nếu không loop), tự reset UI
-      bgAudio.addEventListener('ended', () => {
-        updateUI(false);
-      });
+      bgAudio.addEventListener('ended', () => updateUI(false));
     })();
 
-    // Tương tác bàn Mix (UI demo sinh động)
+    // Tương tác FX pads
     document.querySelectorAll('.fx-pad').forEach(pad => {
       pad.addEventListener('click', () => {
         pad.classList.add('active');
@@ -775,20 +722,8 @@
       });
     });
 
-    document.querySelectorAll('.btn-play').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.classList.toggle('active');
-        const icon = btn.querySelector('i');
-        if (btn.classList.contains('active')) {
-          icon.className = 'fa-solid fa-pause';
-          btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
-        } else {
-          icon.className = 'fa-solid fa-play';
-          btn.innerHTML = '<i class="fa-solid fa-play"></i> Play';
-        }
-      });
     // ==========================================
-    // THEME CONTROLLER (LIGHT/DARK MODE & COLOR PICKER)
+    // FLOATING THEME CONTROLLER (LIGHT/DARK MODE & COLOR PICKER)
     // ==========================================
     (function initThemeController() {
       const themeModeBtn = document.getElementById('theme-mode-btn');
