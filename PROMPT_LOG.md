@@ -53,14 +53,34 @@
 
 ---
 
+### Lần 4: Tinh chỉnh Tone màu Vàng - Đen - Trắng, Viền LED Chạy Đuổi, Tối ưu Header/Footer & Social Links
+- **Prompt đã dùng:**  
+  *"Chỉnh sửa giao diện hiện tại theo phong cách Vàng - Đen - Trắng chạy LED đuổi:  
+  1. Ở thanh điều hướng trên cùng, xóa phần thông tin 'Nhữ Mai Gia Long - 125000079'.  
+  2. Ở footer, xóa toàn bộ hai cột 'Công Nghệ Sử Dụng' và 'Thông Tin Sinh Viên'. Căn chỉnh lại 2 cột còn lại (Brand & Quick Links) cân đối trên desktop và hiển thị gọn đẹp trên mobile.  
+  3. Xóa câu 'Bản quyền thuộc về sinh viên Nhữ Mai Gia Long (125000079). Đề tài: Mix Nhạc.', chỉ giữ lại dòng '© 2026 VibeMix Studio.' và dòng 'Được xây dựng với triết lý Vibe Coding & Prompt Engineering.'  
+  4. Gắn liên kết mạng xã hội chính xác có thể nhấn được (mở tab mới `target='_blank'` và `rel='noopener noreferrer'`) gồm:  
+     - GitHub: https://github.com/jalong-source  
+     - Facebook: https://web.facebook.com/beastedm  
+     - SoundCloud: https://soundcloud.com/gialongbeast  
+     - YouTube: https://www.youtube.com/@longgia9034  
+  5. Thiết kế hiệu ứng viền LED chạy đuổi (chasing LED border) bằng CSS thuần cho Header, bàn Mixer, Console và các card nổi bật."*
+- **Kết quả AI tạo ra:**  
+  - Giao diện chuyển đổi sang tone màu Vàng Hoàng Kim (`#FFD700`), Đen Obsidian (`#08080A`) và Trắng tương phản cực kỳ sang trọng, chuyên nghiệp.
+  - Xây dựng thành công hiệu ứng **LED viền chạy đuổi** liên tục (`@keyframes ledChaseBorder` và `@keyframes ledChaseHorizontal`) ở viền trên header và bao quanh bàn Mixer Studio.
+  - Các icon mạng xã hội hoạt động chính xác với đầy đủ thuộc tính bảo mật và hiệu ứng hover phát sáng vàng neon.
+  - Footer được tinh gọn còn 2 cột cân đối, responsive linh hoạt theo trục dọc trên điện thoại di động.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 ### AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?
-1. **Viết mã CSS Boilerplate & Variables:** Tự động tạo bảng màu HSL/HEX neon hài hòa, tính toán spacing, border-radius và shadow phát sáng nhanh gấp 5 lần so với viết thủ công.
-2. **Xây dựng cấu trúc Layout Grid & Flexbox:** Việc căn chỉnh bố cục phức tạp của bàn Mixer (3 cột trên desktop chuyển thành 1 cột trên mobile) được AI xử lý chính xác chỉ sau một câu lệnh.
-3. **Tích hợp CDN & Icon:** Tự động liên kết đúng phiên bản CDN của FontAwesome, Animate.css, Google Fonts và AOS mà không cần tra cứu tài liệu thủ công.
+1. **Viết mã CSS Variables & Hiệu ứng Phức Tạp:** Xây dựng bảng màu Vàng - Đen - Trắng và hiệu ứng viền LED chạy đuổi (Chasing LED border) nhanh chóng bằng kỹ thuật `background-size` kết hợp mask và conic/linear gradients.
+2. **Căn Chỉnh Layout Đa Thiết Bị (Responsive):** Chuyển đổi từ bố cục 4 cột ban đầu sang 2 cột footer tinh gọn, tự động co giãn từ desktop xuống mobile mà không bị vỡ giao diện.
+3. **Tích hợp Semantic & Liên kết chuẩn chỉ:** Refactor mã nguồn nhanh gọn, đảm bảo 100% tuân thủ các quy tắc chuẩn HTML5 và Accessibility (aria-label, noopener noreferrer).
 
 ### Bài học rút ra khi đặt câu hỏi (Prompt) cho AI trong thiết kế web?
-- **Đưa ra ràng buộc kỹ thuật rõ ràng ngay từ đầu (Constraint-first Prompting):** Nếu không nhấn mạnh "Semantic HTML5 100% và cấm lạm dụng thẻ `<div>`", AI sẽ mặc định dùng rất nhiều thẻ `<div>` tiện lợi nhưng sai chuẩn ngữ nghĩa.
-- **Tiếp cận theo từng bước (Iterative Refinement):** Không nên yêu cầu AI làm tất cả trong một lần duy nhất mà nên đi từ Dựng khung chuẩn -> Áp dụng hệ thống biến CSS -> Tích hợp hiệu ứng/thư viện -> Tối ưu Responsive và Tinh chỉnh chi tiết.
-- **Biết đọc hiểu code và debug kịp thời:** Lập trình viên phải hiểu rõ cơ chế hoạt động của thư viện (như vòng đời của AOS cần được kích hoạt bằng `AOS.init()`) để nhanh chóng phát hiện lỗi và đưa ra "Debug Prompt" chuẩn xác cho AI.
+- **Đưa ra yêu cầu cụ thể về màu sắc và hiệu ứng (Theme & Motion specifics):** Chỉ định rõ "phong cách vàng đen chạy LED đuổi" giúp AI lựa chọn chính xác mã màu tương phản cao và xây dựng animation chuyển động tinh tế thay vì màu sắc chung chung.
+- **Quản lý cấu trúc theo Module độc lập:** Khi cần thay đổi bố cục (như bỏ cột footer hoặc xóa badge header), cần chỉ rõ phần tử cần bỏ và cách thức tái bố trí (rebalance) các phần tử còn lại để đảm bảo tính thẩm mỹ tổng thể.
+- **Kiểm thử liên kết và hành vi tương tác thực tế:** Luôn kiểm tra các link ngoại vi (`target="_blank"`, `rel="noopener noreferrer"`) và các trạng thái `:hover`, `:focus` để đảm bảo trải nghiệm người dùng liền mạch.
