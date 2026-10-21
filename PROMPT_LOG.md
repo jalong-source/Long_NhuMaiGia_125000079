@@ -103,6 +103,22 @@
 
 ---
 
+### Lần 7: Sửa dứt điểm lỗi tràn viền ngang (Horizontal Overflow) trên thiết bị di động
+- **Prompt đã dùng:**  
+  *"Phần giao diện mobile bị lỗi tràn viền ngang: Tiêu đề 'Tải Ngay Bộ Sound FX & Beat Pack 2026' và Form nhận quà bị lòi ra khỏi mép phải màn hình, chữ và nút bị cắt. Hãy kiểm tra và khắc phục gấp lỗi này."*
+- **Nguyên nhân phát hiện:**  
+  - `.contact-card` mang padding desktop mặc định quá lớn (`padding: 4.5rem = 72px`), cộng thêm `.contact-form` có padding `2.5rem = 40px` và `.section-container` có padding `24px`. Tổng padding chiếm tới hơn 270px, khiến chiều rộng khả dụng trên mobile (< 390px) không đủ chứa form.  
+  - Thuộc tính `white-space: nowrap` trên class `.btn` làm cho nút submit dài bị cố định chiều ngang, đẩy bung lề phải của container.
+- **Cách khắc phục:**  
+  - Thiết lập `overflow-x: hidden` và `max-width: 100vw` cho `html, body` và `.section-container`.  
+  - Điều chỉnh padding responsive cho `.contact-card` (`padding: 1.5rem 1rem !important`) và `.contact-form` (`padding: 1.2rem 0.9rem !important`).  
+  - Cho phép nút bấm xuống dòng linh hoạt (`white-space: normal`) và đặt chiều rộng 100% trên thiết bị di động.  
+  - Bổ sung media query phụ `@media (max-width: 420px)` tối ưu cho các dòng máy màn hình nhỏ (iPhone SE, Galaxy mini).
+- **Kết quả AI tạo ra:**  
+  Toàn bộ giao diện section nhận quà và form đăng ký hiển thị gọn gàng, vừa khít trong khung nhìn mobile, không còn hiện tượng tràn mép ngang.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 ### AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?
