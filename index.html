@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VibeMix Studio - Nền tảng Mix Nhạc & Hòa Âm Phối Khí Trực Tuyến Đỉnh Cao bởi Nhữ Mai Gia Long (MSSV: 125000079)">
+  <title>VibeMix Studio - Mix Nhạc & Sản Xuất Âm Thanh Chuyên Nghiệp</title>
+
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- AOS (Animate On Scroll) CSS CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="VibeMix Studio Home">
+        <img src="assets/logo.svg" alt="VibeMix Logo" class="brand-icon">
+        <span class="brand-text">Vibe<span class="text-gradient">Mix</span></span>
+      </a>
+
+      <!-- Main Navigation Menu -->
+      <nav class="main-navigation" aria-label="Thanh điều hướng chính">
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="#hero" class="nav-link active"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+          <li class="nav-item"><a href="#features" class="nav-link"><i class="fa-solid fa-sliders"></i> Tính Năng Mix</a></li>
+          <li class="nav-item"><a href="#studio-tracks" class="nav-link"><i class="fa-solid fa-compact-disc"></i> Kho Beat & Track</a></li>
+          <li class="nav-item"><a href="#pricing" class="nav-link"><i class="fa-solid fa-layer-group"></i> Gói Studio</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Liên Hệ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Student Info Badge & Quick CTA -->
+      <div class="header-actions">
+        <span class="student-badge" title="Sinh viên thực hiện">
+          <i class="fa-solid fa-user-graduate"></i> Nhữ Mai Gia Long - 125000079
+        </span>
+        <a href="#studio-player" class="btn btn-primary animate__animated animate__pulse animate__infinite">
+          <i class="fa-solid fa-play"></i> Mở Mixer
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="site-main">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="hero-tag animate__animated animate__fadeInDown">
+            <i class="fa-solid fa-bolt"></i> NỀN TẢNG MIX NHẠC ĐỈNH CAO THẾ HỆ MỚI
+          </span>
+          <h1 class="hero-title animate__animated animate__fadeInLeft">
+            Sáng Tạo Giai Điệu, <br>
+            <span class="text-gradient">Thăng Hoa Cảm Xúc</span> Cùng VibeMix
+          </h1>
+          <p class="hero-description animate__animated animate__fadeInLeft animate__delay-1s">
+            Không gian hòa âm phối khí và mix nhạc trực tuyến chuẩn phòng thu chuyên nghiệp. Kết nối beat, tách vocal bằng AI, cân chỉnh EQ, BPM tự động chỉ trong vài cú click chuột.
+          </p>
+          <div class="hero-cta-group animate__animated animate__fadeInUp animate__delay-1s">
+            <a href="#studio-player" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-wave-square"></i> Bắt Đầu Trộn Nhạc Ngay
+            </a>
+            <a href="#studio-tracks" class="btn btn-outline btn-lg">
+              <i class="fa-solid fa-headphones"></i> Nghe Bản Demo
+            </a>
+          </div>
+          <!-- Hero Stats Bar -->
+          <ul class="hero-stats animate__animated animate__fadeInUp animate__delay-1s">
+            <li class="stat-item">
+              <span class="stat-number">200K+</span>
+              <span class="stat-label">Bản Mix Hoàn Thiện</span>
+            </li>
+            <li class="stat-item">
+              <span class="stat-number">128+</span>
+              <span class="stat-label">Hiệu Ứng Studio FX</span>
+            </li>
+            <li class="stat-item">
+              <span class="stat-number">0.05s</span>
+              <span class="stat-label">Độ Trễ Siêu Thấp</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Hero Visual DJ Deck Showcase -->
+        <div class="hero-visual animate__animated animate__zoomIn">
+          <div class="dj-console-mockup">
+            <div class="vinyl-wrapper">
+              <img src="assets/vinyl.svg" alt="Đĩa than DJ Vinyl" class="spinning-vinyl">
+              <div class="vinyl-arm"></div>
+            </div>
+            <div class="visualizer-bars" aria-hidden="true">
+              <span class="bar bar-1"></span>
+              <span class="bar bar-2"></span>
+              <span class="bar bar-3"></span>
+              <span class="bar bar-4"></span>
+              <span class="bar bar-5"></span>
+              <span class="bar bar-6"></span>
+              <span class="bar bar-7"></span>
+              <span class="bar bar-8"></span>
+              <span class="bar bar-9"></span>
+              <span class="bar bar-10"></span>
+            </div>
+            <div class="current-track-card">
+              <i class="fa-solid fa-music track-icon"></i>
+              <div class="track-meta">
+                <span class="track-title">Cyber Vibe Mix #07</span>
+                <span class="track-artist">Live Mastering • 128 BPM • Key 4A</span>
+              </div>
+              <span class="live-indicator"><i class="fa-solid fa-circle"></i> ON AIR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE STUDIO MIXER INTERACTIVE SECTION -->
+    <section id="studio-player" class="studio-section" data-aos="fade-up">
+      <div class="section-container">
+        <header class="section-header">
+          <span class="section-badge">BÀN MIX TRỰC QUAN</span>
+          <h2 class="section-title">Phòng Thu Ảo & Mixer Điều Khiển Tần Số</h2>
+          <p class="section-subtitle">Tự do điều chỉnh các kênh âm Bass, Mid, Treble, Crossfader và kích hoạt Sound FX tức thời.</p>
+        </header>
+
+        <div class="mixer-board-frame" data-aos="zoom-in" data-aos-delay="150">
+          <!-- Deck A -->
+          <article class="deck-channel deck-a">
+            <div class="deck-top">
+              <span class="deck-badge">DECK A (MASTER)</span>
+              <span class="bpm-tag">126 BPM</span>
+            </div>
+            <h3 class="deck-track-name">Midnight Lo-Fi Chill.mp3</h3>
+            <div class="slider-group">
+              <label for="eq-low-a">BASS / LOW</label>
+              <input type="range" id="eq-low-a" class="custom-slider" min="0" max="100" value="75">
+            </div>
+            <div class="slider-group">
+              <label for="eq-mid-a">MID / VOCAL</label>
+              <input type="range" id="eq-mid-a" class="custom-slider" min="0" max="100" value="60">
+            </div>
+            <div class="slider-group">
+              <label for="eq-high-a">TREBLE / HIGH</label>
+              <input type="range" id="eq-high-a" class="custom-slider" min="0" max="100" value="85">
+            </div>
+            <div class="deck-buttons">
+              <button type="button" class="btn btn-ctrl btn-play active"><i class="fa-solid fa-play"></i> Play</button>
+              <button type="button" class="btn btn-ctrl"><i class="fa-solid fa-rotate-left"></i> Cue</button>
+              <button type="button" class="btn btn-ctrl"><i class="fa-solid fa-repeat"></i> Loop</button>
+            </div>
+          </article>
+
+          <!-- Central Crossfader & FX Module -->
+          <article class="deck-master-center">
+            <h3 class="module-title"><i class="fa-solid fa-sliders"></i> BỘ ĐIỀU PHỐI (CROSSFADER)</h3>
+            <div class="vu-meter-display">
+              <div class="vu-channel"><div class="vu-fill vu-left"></div></div>
+              <div class="vu-channel"><div class="vu-fill vu-right"></div></div>
+            </div>
+            <div class="crossfader-container">
+              <span class="crossfader-label">A</span>
+              <input type="range" id="crossfader" class="crossfader-slider" min="0" max="100" value="50">
+              <span class="crossfader-label">B</span>
+            </div>
+            <div class="hot-fx-grid">
+              <button type="button" class="fx-pad" title="Hiệu ứng Drop Bass"><i class="fa-solid fa-bomb"></i> DROP</button>
+              <button type="button" class="fx-pad" title="Hiệu ứng Tiếng Còi DJ Horn"><i class="fa-solid fa-bullhorn"></i> HORN</button>
+              <button type="button" class="fx-pad" title="Hiệu ứng Đảo Âm Scratch"><i class="fa-solid fa-record-vinyl"></i> SCRATCH</button>
+              <button type="button" class="fx-pad" title="Hiệu ứng Tiếng Vang Reverb"><i class="fa-solid fa-water"></i> REVERB</button>
+            </div>
+          </article>
+
+          <!-- Deck B -->
+          <article class="deck-channel deck-b">
+            <div class="deck-top">
+              <span class="deck-badge">DECK B (SLAVE)</span>
+              <span class="bpm-tag">128 BPM</span>
+            </div>
+            <h3 class="deck-track-name">Future Bass Drop 2026.wav</h3>
+            <div class="slider-group">
+              <label for="eq-low-b">BASS / LOW</label>
+              <input type="range" id="eq-low-b" class="custom-slider" min="0" max="100" value="80">
+            </div>
+            <div class="slider-group">
+              <label for="eq-mid-b">MID / VOCAL</label>
+              <input type="range" id="eq-mid-b" class="custom-slider" min="0" max="100" value="55">
+            </div>
+            <div class="slider-group">
+              <label for="eq-high-b">TREBLE / HIGH</label>
+              <input type="range" id="eq-high-b" class="custom-slider" min="0" max="100" value="70">
+            </div>
+            <div class="deck-buttons">
+              <button type="button" class="btn btn-ctrl btn-play"><i class="fa-solid fa-play"></i> Play</button>
+              <button type="button" class="btn btn-ctrl"><i class="fa-solid fa-rotate-left"></i> Cue</button>
+              <button type="button" class="btn btn-ctrl"><i class="fa-solid fa-bolt"></i> Sync</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION (CSS GRID) -->
+    <section id="features" class="features-section">
+      <div class="section-container">
+        <header class="section-header" data-aos="fade-down">
+          <span class="section-badge">CÔNG NGHỆ NỔI BẬT</span>
+          <h2 class="section-title">Bộ Công Cụ Mix Nhạc Hiện Đại Nhất</h2>
+          <p class="section-subtitle">Được phát triển trên nền tảng Web Audio API tối tân, mang sức mạnh phòng thu chuyên nghiệp lên trình duyệt của bạn.</p>
+        </header>
+
+        <div class="features-grid">
+          <!-- Feature Card 1 -->
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-icon-wrapper">
+              <i class="fa-solid fa-sliders"></i>
+            </div>
+            <h3 class="feature-title">Multi-Track Mixing</h3>
+            <p class="feature-desc">Hòa âm cùng lúc tới 16 kênh âm thanh độc lập với khả năng mute, solo, cân chỉnh gain và pan âm stereo đa hướng.</p>
+            <span class="feature-link">Tìm hiểu thêm <i class="fa-solid fa-arrow-right"></i></span>
+          </article>
+
+          <!-- Feature Card 2 -->
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-icon-wrapper">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <h3 class="feature-title">Tách Vocal Bằng AI</h3>
+            <p class="feature-desc">Tự động bóc tách giọng hát (Acapella) và bản beat nhạc nền (Instrumental) sạch sẽ với thuật toán AI Neural Network sâu.</p>
+            <span class="feature-link">Tìm hiểu thêm <i class="fa-solid fa-arrow-right"></i></span>
+          </article>
+
+          <!-- Feature Card 3 -->
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-icon-wrapper">
+              <i class="fa-solid fa-compact-disc"></i>
+            </div>
+            <h3 class="feature-title">Auto Beatmatch & Sync</h3>
+            <p class="feature-desc">Đồng bộ nhịp điệu BPM và khớp tông nốt nhạc (Harmonic Key Mixing) chuẩn xác giúp chuyển bài mượt mà không bị phô lệch.</p>
+            <span class="feature-link">Tìm hiểu thêm <i class="fa-solid fa-arrow-right"></i></span>
+          </article>
+
+          <!-- Feature Card 4 -->
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-icon-wrapper">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3 class="feature-title">Hiệu Ứng DSP Realtime</h3>
+            <p class="feature-desc">Tích hợp thư viện bộ lọc âm thanh: Flanger, Phaser, Delay, Distortion, High-Pass và Low-Pass Filter với độ trễ cực thấp.</p>
+            <span class="feature-link">Tìm hiểu thêm <i class="fa-solid fa-arrow-right"></i></span>
+          </article>
+
+          <!-- Feature Card 5 -->
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-icon-wrapper">
+              <i class="fa-solid fa-headphones-simple"></i>
+            </div>
+            <h3 class="feature-title">3D Spatial Sound</h3>
+            <p class="feature-desc">Mô phỏng không gian âm thanh vòm 360 độ (Binaural & Dolby Atmos), giúp người nghe như đắm chìm trong lễ hội EDM.</p>
+            <span class="feature-link">Tìm hiểu thêm <i class="fa-solid fa-arrow-right"></i></span>
+          </article>
+
+          <!-- Feature Card 6 -->
+          <article class="feature-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-icon-wrapper">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
+            <h3 class="feature-title">Xuất File Lossless & Cloud</h3>
+            <p class="feature-desc">Render nhanh chóng bản mix ở định dạng WAV 24-bit / 96kHz hoặc MP3 320kbps và chia sẻ tức thì lên Soundcloud/Spotify.</p>
+            <span class="feature-link">Tìm hiểu thêm <i class="fa-solid fa-arrow-right"></i></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOT TRACKS & SAMPLE BEATS (CSS GRID + CARD HOVER) -->
+    <section id="studio-tracks" class="tracks-section">
+      <div class="section-container">
+        <header class="section-header" data-aos="fade-down">
+          <span class="section-badge">KHO MẪU & BẢN MIX MẪU</span>
+          <h2 class="section-title">Bộ Sưu Tập Beat & Preset Nóng Bỏng</h2>
+          <p class="section-subtitle">Tải ngay các sample stems, vocal hooks và preset mix hoàn toàn miễn phí cho tác phẩm của bạn.</p>
+        </header>
+
+        <div class="tracks-grid">
+          <!-- Track Card 1 -->
+          <article class="track-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="track-thumbnail">
+              <div class="track-overlay">
+                <button type="button" class="btn-circle-play" aria-label="Phát nhạc Neon Cyber"><i class="fa-solid fa-play"></i></button>
+              </div>
+              <div class="track-badge">EDM FESTIVAL</div>
+            </div>
+            <div class="track-info">
+              <span class="track-genre"><i class="fa-solid fa-tag"></i> Big Room • 130 BPM</span>
+              <h3 class="track-name">Neon Cyber Awakening</h3>
+              <p class="track-creator">Bản Mix bởi Producer Gia Long</p>
+              <div class="track-meta-row">
+                <span><i class="fa-solid fa-heart"></i> 14.8k</span>
+                <span><i class="fa-solid fa-share-nodes"></i> 3.2k</span>
+                <button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Tải Stem</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Track Card 2 -->
+          <article class="track-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="track-thumbnail track-thumb-2">
+              <div class="track-overlay">
+                <button type="button" class="btn-circle-play" aria-label="Phát nhạc Sunset Chillout"><i class="fa-solid fa-play"></i></button>
+              </div>
+              <div class="track-badge">LO-FI HIPHOP</div>
+            </div>
+            <div class="track-info">
+              <span class="track-genre"><i class="fa-solid fa-tag"></i> Chill Beats • 85 BPM</span>
+              <h3 class="track-name">Sunset Coffee Rain Beats</h3>
+              <p class="track-creator">Bản Mix bởi Vibe Studio</p>
+              <div class="track-meta-row">
+                <span><i class="fa-solid fa-heart"></i> 28.4k</span>
+                <span><i class="fa-solid fa-share-nodes"></i> 7.5k</span>
+                <button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Tải Stem</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Track Card 3 -->
+          <article class="track-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="track-thumbnail track-thumb-3">
+              <div class="track-overlay">
+                <button type="button" class="btn-circle-play" aria-label="Phát nhạc Bass House Wave"><i class="fa-solid fa-play"></i></button>
+              </div>
+              <div class="track-badge">FUTURE HOUSE</div>
+            </div>
+            <div class="track-info">
+              <span class="track-genre"><i class="fa-solid fa-tag"></i> Club Mix • 126 BPM</span>
+              <h3 class="track-name">Deep Pulse Velocity</h3>
+              <p class="track-creator">Bản Mix bởi SoundMaster</p>
+              <div class="track-meta-row">
+                <span><i class="fa-solid fa-heart"></i> 19.1k</span>
+                <span><i class="fa-solid fa-share-nodes"></i> 5.0k</span>
+                <button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Tải Stem</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Track Card 4 -->
+          <article class="track-card" data-aos="zoom-in" data-aos-delay="400">
+            <div class="track-thumbnail track-thumb-4">
+              <div class="track-overlay">
+                <button type="button" class="btn-circle-play" aria-label="Phát nhạc Trap Melodic"><i class="fa-solid fa-play"></i></button>
+              </div>
+              <div class="track-badge">TRAP & 808</div>
+            </div>
+            <div class="track-info">
+              <span class="track-genre"><i class="fa-solid fa-tag"></i> Drill 808 • 140 BPM</span>
+              <h3 class="track-name">Midnight Tokyo Drift Bass</h3>
+              <p class="track-creator">Bản Mix bởi DJ Apex</p>
+              <div class="track-meta-row">
+                <span><i class="fa-solid fa-heart"></i> 32.6k</span>
+                <span><i class="fa-solid fa-share-nodes"></i> 9.8k</span>
+                <button type="button" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Tải Stem</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING PLANS SECTION (CSS GRID) -->
+    <section id="pricing" class="pricing-section">
+      <div class="section-container">
+        <header class="section-header" data-aos="fade-down">
+          <span class="section-badge">GÓI TRẢI NGHIỆM</span>
+          <h2 class="section-title">Chọn Gói Studio Phù Hợp Với Bạn</h2>
+          <p class="section-subtitle">Khởi đầu miễn phí, nâng cấp bất cứ lúc nào khi cần thêm tính năng mastering và tách vocal không giới hạn.</p>
+        </header>
+
+        <div class="pricing-grid">
+          <!-- Starter Plan -->
+          <article class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-header">
+              <h3 class="plan-name">Starter Producer</h3>
+              <p class="plan-desc">Dành cho người mới tập tành mix nhạc cơ bản.</p>
+              <div class="plan-price">
+                <span class="currency">0đ</span>
+                <span class="period">/ mãi mãi</span>
+              </div>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fa-solid fa-circle-check"></i> Mix cùng lúc tối đa 4 Tracks</li>
+              <li><i class="fa-solid fa-circle-check"></i> Xuất file MP3 chuẩn 192kbps</li>
+              <li><i class="fa-solid fa-circle-check"></i> 5 lần tách Vocal AI / ngày</li>
+              <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Bộ lọc DSP cao cấp</li>
+              <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Xuất âm thanh không nén WAV</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline btn-block">Đăng Ký Miễn Phí</a>
+          </article>
+
+          <!-- Pro Studio Plan (Featured) -->
+          <article class="pricing-card featured" data-aos="fade-up" data-aos-delay="200">
+            <div class="featured-ribbon"><i class="fa-solid fa-fire"></i> PHỔ BIẾN NHẤT</div>
+            <div class="pricing-header">
+              <h3 class="plan-name">Pro DJ Studio</h3>
+              <p class="plan-desc">Dành cho DJ chuyên nghiệp, Beatmaker và Podcaster.</p>
+              <div class="plan-price">
+                <span class="currency">199.000đ</span>
+                <span class="period">/ tháng</span>
+              </div>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Không giới hạn</strong> Tracks mix</li>
+              <li><i class="fa-solid fa-circle-check"></i> Xuất file WAV 24-bit Lossless</li>
+              <li><i class="fa-solid fa-circle-check"></i> Tách Vocal AI không giới hạn</li>
+              <li><i class="fa-solid fa-circle-check"></i> Toàn quyền truy cập 128+ Sound FX</li>
+              <li><i class="fa-solid fa-circle-check"></i> Hỗ trợ lưu trữ Cloud 50GB</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary btn-block">Nâng Cấp Pro Ngay</a>
+          </article>
+
+          <!-- Master Label Plan -->
+          <article class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="pricing-header">
+              <h3 class="plan-name">Record Label</h3>
+              <p class="plan-desc">Giải pháp phòng thu trọn gói cho Studio & Hãng đĩa.</p>
+              <div class="plan-price">
+                <span class="currency">499.000đ</span>
+                <span class="period">/ tháng</span>
+              </div>
+            </div>
+            <ul class="plan-features">
+              <li><i class="fa-solid fa-circle-check"></i> Bao gồm toàn bộ tính năng gói Pro</li>
+              <li><i class="fa-solid fa-circle-check"></i> Cấp quyền thương mại toàn cầu</li>
+              <li><i class="fa-solid fa-circle-check"></i> Hỗ trợ kỹ thuật 1-kèm-1 qua Hotline</li>
+              <li><i class="fa-solid fa-circle-check"></i> Đồng bộ nhiều tài khoản Producer</li>
+              <li><i class="fa-solid fa-circle-check"></i> Lưu trữ Cloud Không Giới Hạn</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline btn-block">Liên Hệ Hợp Tác</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION (QUOTES) -->
+    <section class="testimonials-section">
+      <div class="section-container">
+        <header class="section-header" data-aos="fade-down">
+          <span class="section-badge">CỘNG ĐỒNG SÁNG TẠO</span>
+          <h2 class="section-title">Các DJ & Producer Nói Gì Về VibeMix?</h2>
+        </header>
+
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <article class="testimonial-card" data-aos="fade-right">
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <blockquote class="testimonial-quote">
+              "Giao diện trực quan và tính năng tách vocal cực kỳ sạch. Tôi có thể phác thảo ý tưởng mashup nhanh chóng ngay trên trình duyệt mà không cần mở phần mềm nặng nề."
+            </blockquote>
+            <div class="author-info">
+              <div class="author-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+              <div class="author-details">
+                <h4 class="author-name">DJ Mike Nguyen</h4>
+                <p class="author-role">Club Resident DJ, TP.HCM</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article class="testimonial-card" data-aos="fade-left">
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <blockquote class="testimonial-quote">
+              "Khả năng đồng bộ BPM và tự động tính toán Key rất mượt. Dự án kiểm tra của bạn Nhữ Mai Gia Long thiết kế layout và phối màu dark mode cực kỳ ấn tượng!"
+            </blockquote>
+            <div class="author-info">
+              <div class="author-avatar"><i class="fa-solid fa-headphones"></i></div>
+              <div class="author-details">
+                <h4 class="author-name">Producer Andy Tran</h4>
+                <p class="author-role">EDM Producer & Sound Engineer</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / NEWSLETTER SECTION -->
+    <section id="contact" class="contact-section">
+      <div class="section-container" data-aos="zoom-in">
+        <div class="contact-card">
+          <div class="contact-info">
+            <span class="section-badge">NHẬN QUÀ TẶNG MIỄN PHÍ</span>
+            <h2 class="contact-title">Tải Ngay Bộ Sound FX & Beat Pack 2026</h2>
+            <p class="contact-desc">Để lại email để nhận ngay bộ 500+ hiệu ứng âm thanh phòng thu, drop bass và vocal loop độc quyền hoàn toàn miễn phí.</p>
+            <ul class="contact-highlights">
+              <li><i class="fa-solid fa-check"></i> Tải về ngay lập tức không cần thẻ tín dụng</li>
+              <li><i class="fa-solid fa-check"></i> Bản quyền sử dụng tự do cho mọi dự án cá nhân</li>
+            </ul>
+          </div>
+          <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký nhận bộ beat demo!');">
+            <div class="form-group">
+              <label for="subscriber-name">Họ và tên của bạn:</label>
+              <input type="text" id="subscriber-name" class="form-input" placeholder="VD: Nhữ Mai Gia Long" required>
+            </div>
+            <div class="form-group">
+              <label for="subscriber-email">Địa chỉ Email:</label>
+              <input type="email" id="subscriber-email" class="form-input" placeholder="tenbancuaban@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="music-genre">Thể loại âm nhạc bạn yêu thích:</label>
+              <select id="music-genre" class="form-select">
+                <option value="edm">EDM / Festival House</option>
+                <option value="lofi">Lo-Fi HipHop / Chill</option>
+                <option value="trap">Trap / HipHop 808</option>
+                <option value="pop">Vinahouse / Remix Pop</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+              <i class="fa-solid fa-paper-plane"></i> Nhận Bộ Beat & Bắt Đầu Mix
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Brand Summary Column -->
+        <div class="footer-col brand-col">
+          <div class="footer-brand">
+            <img src="assets/logo.svg" alt="VibeMix Logo" class="footer-logo">
+            <span class="brand-text">Vibe<span class="text-gradient">Mix</span></span>
+          </div>
+          <p class="footer-about">
+            Nền tảng website Mix Nhạc trực tuyến tiên tiến - Dự án Kiểm Tra Giữa Kỳ môn Thiết Kế Web. Áp dụng chuẩn Semantic HTML5, CSS Variables, Flexbox/Grid, Animate.css và AOS.
+          </p>
+          <div class="social-links">
+            <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://soundcloud.com" target="_blank" rel="noopener" aria-label="SoundCloud"><i class="fa-brands fa-soundcloud"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Điều Hướng Nhanh</h4>
+          <ul class="footer-links">
+            <li><a href="#hero"><i class="fa-solid fa-chevron-right"></i> Trang Chủ</a></li>
+            <li><a href="#studio-player"><i class="fa-solid fa-chevron-right"></i> Bàn Mixer Trực Quan</a></li>
+            <li><a href="#features"><i class="fa-solid fa-chevron-right"></i> Tính Năng Studio</a></li>
+            <li><a href="#studio-tracks"><i class="fa-solid fa-chevron-right"></i> Kho Beat Demo</a></li>
+            <li><a href="#pricing"><i class="fa-solid fa-chevron-right"></i> Bảng Giá Dịch Vụ</a></li>
+          </ul>
+        </div>
+
+        <!-- Technologies Column -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Công Nghệ Sử Dụng</h4>
+          <ul class="footer-links">
+            <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics" target="_blank" rel="noopener"><i class="fa-brands fa-html5"></i> Semantic HTML5</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" target="_blank" rel="noopener"><i class="fa-brands fa-css3-alt"></i> CSS Variables & Grid</a></li>
+            <li><a href="https://animate.style" target="_blank" rel="noopener"><i class="fa-solid fa-wand-magic"></i> Animate.css v4.1.1</a></li>
+            <li><a href="https://michalsnik.github.io/aos" target="_blank" rel="noopener"><i class="fa-solid fa-scroll"></i> AOS (Animate On Scroll)</a></li>
+            <li><a href="https://fontawesome.com" target="_blank" rel="noopener"><i class="fa-solid fa-font-awesome"></i> Font Awesome 6.5.1</a></li>
+          </ul>
+        </div>
+
+        <!-- Student Author Info Column -->
+        <div class="footer-col student-info-col">
+          <h4 class="footer-heading">Thông Tin Sinh Viên</h4>
+          <div class="student-card-mini">
+            <p><i class="fa-solid fa-user-pen"></i> <strong>Họ tên:</strong> Nhữ Mai Gia Long</p>
+            <p><i class="fa-solid fa-id-card"></i> <strong>MSSV:</strong> 125000079</p>
+            <p><i class="fa-solid fa-book"></i> <strong>Học phần:</strong> Thiết Kế Web</p>
+            <p><i class="fa-solid fa-graduation-cap"></i> <strong>Khoa:</strong> Công Nghệ Thông Tin</p>
+            <p><i class="fa-solid fa-school"></i> <strong>Trường:</strong> Đại Học Lạc Hồng</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; 2026 <strong>VibeMix Studio</strong>. Bản quyền thuộc về sinh viên <strong>Nhữ Mai Gia Long (125000079)</strong>. Đề tài: Mix Nhạc.
+        </p>
+        <p class="sub-note">
+          Được xây dựng với triết lý <span class="badge-vibe">Vibe Coding</span> & Prompt Engineering.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== LIBRARIES & SCRIPTS ==================== -->
+  <!-- AOS (Animate On Scroll) JS CDN -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Kích hoạt thư viện AOS
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 80
+    });
+
+    // Tương tác nhẹ cho bàn Mix (UI demo sinh động)
+    document.querySelectorAll('.fx-pad').forEach(pad => {
+      pad.addEventListener('click', () => {
+        pad.classList.add('active');
+        setTimeout(() => pad.classList.remove('active'), 300);
+      });
+    });
+
+    document.querySelectorAll('.btn-play').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const icon = btn.querySelector('i');
+        if (btn.classList.contains('active')) {
+          icon.className = 'fa-solid fa-pause';
+          btn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
+        } else {
+          icon.className = 'fa-solid fa-play';
+          btn.innerHTML = '<i class="fa-solid fa-play"></i> Play';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

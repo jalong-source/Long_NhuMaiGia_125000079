@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <radialGradient id="vinylShine" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2A2D3D"/>
+      <stop offset="60%" stop-color="#141622"/>
+      <stop offset="90%" stop-color="#0A0B10"/>
+      <stop offset="100%" stop-color="#050608"/>
+    </radialGradient>
+    <linearGradient id="centerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3366"/>
+      <stop offset="100%" stop-color="#BA13F9"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer Vinyl Body -->
+  <circle cx="100" cy="100" r="95" fill="url(#vinylShine)" stroke="#3A3F58" stroke-width="2"/>
+  <!-- Grooves -->
+  <circle cx="100" cy="100" r="82" stroke="#252839" stroke-width="1.5" stroke-dasharray="8 4"/>
+  <circle cx="100" cy="100" r="70" stroke="#252839" stroke-width="1.5"/>
+  <circle cx="100" cy="100" r="58" stroke="#252839" stroke-width="1.5" stroke-dasharray="12 4"/>
+  <circle cx="100" cy="100" r="46" stroke="#252839" stroke-width="1.5"/>
+  <!-- Center Label -->
+  <circle cx="100" cy="100" r="32" fill="url(#centerGrad)"/>
+  <circle cx="100" cy="100" r="10" fill="#0D0E15"/>
+  <circle cx="100" cy="100" r="4" fill="#FFFFFF"/>
+</svg>
