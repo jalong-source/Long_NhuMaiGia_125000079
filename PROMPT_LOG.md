@@ -73,6 +73,23 @@
 
 ---
 
+### Lần 5: Tích hợp âm thanh Tokyo Drift, Cơ chế First-Interaction Phát Nhạc & Tương Thích GitHub Pages
+- **Prompt đã dùng:**  
+  *"Thêm chức năng phát nhạc Tokyo Drift cho website:  
+  1. Sử dụng file audio Tokyo Drift có sẵn trong dự án (`Low X Tokyo Drift Remix - Full Mashup.mp3`), chuẩn hóa đường dẫn tương đối `assets/tokyo-drift.mp3` để tương thích hoàn toàn khi deploy lên GitHub Pages (kể cả khi deploy dưới repo sub-path).  
+  2. Tuân thủ chính sách trình duyệt: Không cố phát nhạc có tiếng ngay khi vừa tải trang để tránh bị chặn Autoplay.  
+  3. Cơ chế First-Interaction: Lắng nghe cú chạm hoặc nhấn đầu tiên của người dùng ở bất kỳ đâu trên trang để kích hoạt phát nhạc đúng 1 lần, tuyệt đối không gọi `e.stopPropagation()` hay `e.preventDefault()` để không gây ảnh hưởng đến hoạt động của nút bấm, mixer hay link hiện có.  
+  4. Bổ sung nút Bật/Tạm dừng rõ ràng (Floating Player Widget) với biểu tượng đĩa than xoay đồng bộ và đèn trạng thái ON AIR / PAUSED để người dùng toàn quyền kiểm soát âm thanh. Bắt lỗi Promise nhẹ nhàng nếu trình duyệt từ chối hoặc file chưa tải xong."*
+- **Thách thức gặp phải & Giải pháp:**  
+  - *Thách thức 1:* Chính sách Autoplay nghiêm ngặt của Chrome, Safari và Firefox sẽ ném ra ngoại lệ `NotAllowedError` nếu tự động gọi `audio.play()` khi chưa có tương tác từ người dùng.  
+  - *Giải pháp:* Đăng ký sự kiện lắng nghe một lần (`once: true`) cho `click`, `touchstart`, `keydown` trên toàn bộ cửa sổ. Khi người dùng thực hiện thao tác đầu tiên, hàm `playAudioSafely()` được kích hoạt an toàn trong khối `try/catch` với Promise callback.  
+  - *Thách thức 2:* Đường dẫn tuyệt đối dạng `/assets/...` sẽ bị lỗi 404 khi deploy lên GitHub Pages vì GitHub Pages đặt website dưới đường dẫn `username.github.io/repo-name/`.  
+  - *Giải pháp:* Dùng đường dẫn tương đối chuẩn `assets/tokyo-drift.mp3` (viết thường toàn bộ, không có dấu `/` ở đầu), giúp trình duyệt tự resolve chính xác tại mọi môi trường host.
+- **Kết quả AI tạo ra:**  
+  Tính năng phát nhạc Tokyo Drift Remix hoạt động mượt mà, hòa quyện cùng hiệu ứng xoay của đĩa than và dàn sóng âm Equalizer, có Floating Player widget sang trọng giúp người dùng bật/tắt tức thì.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 ### AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?
