@@ -1116,6 +1116,7 @@ h1, h2, h3, h4 {
   box-shadow: 0 0 22px var(--primary-glow-intense);
   transform: scale(0.85);
   transition: all var(--transition-fast);
+  text-decoration: none;
 }
 
 .track-card:hover .btn-circle-play {
@@ -1125,6 +1126,44 @@ h1, h2, h3, h4 {
 .btn-circle-play:hover {
   background: #ffffff;
   transform: scale(1.1) !important;
+}
+
+.btn-youtube {
+  background: #ff0000;
+  color: #ffffff;
+  box-shadow: 0 0 22px rgba(255, 0, 0, 0.6);
+}
+
+.btn-youtube:hover {
+  background: #ffffff;
+  color: #ff0000;
+  box-shadow: 0 0 28px rgba(255, 0, 0, 0.9);
+}
+
+.btn-yt-sm {
+  border-color: rgba(255, 215, 0, 0.3);
+  color: var(--text-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn-yt-sm i {
+  color: #ff0000;
+  transition: transform var(--transition-fast);
+}
+
+.btn-yt-sm:hover {
+  border-color: #ff0000;
+  color: #ffffff;
+  background: rgba(255, 0, 0, 0.15);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+.btn-yt-sm:hover i {
+  transform: scale(1.2);
 }
 
 .track-info {
