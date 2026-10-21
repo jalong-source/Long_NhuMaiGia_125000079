@@ -27,6 +27,7 @@
   - `AOS (Animate On Scroll) v2.3.1` tạo hiệu ứng cuộn trang sống động.
   - `FontAwesome 6.5.1` & `Google Fonts (Inter & Outfit)`.
 - **Chức Năng Phát Nhạc Tokyo Drift Remix:** Tự động kích hoạt an toàn sau lần chạm đầu tiên của người dùng (tuân thủ Autoplay Policy của trình duyệt) và tích hợp Floating Music Player Widget điều khiển Bật / Tạm dừng.
+- **Chế Độ Sáng / Tối & Bộ Chọn Màu Theme:** Cho phép chuyển đổi linh hoạt giữa Dark Mode và Light Mode (icon Mặt trăng / Mặt trời), cùng 5 màu theme chủ đạo rực rỡ (Vàng Gold, Xanh Cyan, Hồng Neon, Xanh Lá, Tím Neon) với khả năng lưu cấu hình vào `localStorage`.
 - **Liên Kết Mạng Xã Hội & YouTube Thực Tế:** 4 bản mix demo được liên kết trực tiếp sang các video âm nhạc YouTube chất lượng cao (EDM Big Room, Lo-Fi Chill, Future House, Tokyo Drift Drill Trap).
 
 ---
@@ -35,12 +36,12 @@
 ```text
 Long_NhuMaiGia_125000079/
 ├── index.html           # Mã nguồn HTML5 chuẩn Semantic
-├── style.css            # Toàn bộ CSS phong cách Vàng - Đen LED đuổi
+├── style.css            # Toàn bộ CSS phong cách Vàng - Đen LED đuổi & Hệ thống Theme
 ├── assets/
 │   ├── logo.svg         # Logo biểu tượng sóng âm Studio
 │   ├── vinyl.svg        # Đĩa than DJ xoay vô tận
 │   └── tokyo-drift.mp3  # File âm thanh demo Tokyo Drift Mashup
-├── PROMPT_LOG.md        # Nhật ký Prompt Engineering (6 lần Iteration)
+├── PROMPT_LOG.md        # Nhật ký Prompt Engineering (8 lần Iteration)
 └── README.md            # Tài liệu tổng quan dự án và Link Live Preview
 ```
 

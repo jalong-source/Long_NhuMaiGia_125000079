@@ -119,6 +119,23 @@
 
 ---
 
+### Lần 8: Tích hợp chế độ Sáng / Tối (Dark & Light Mode) và Bộ chọn màu chủ đạo (Accent Color Palette Switcher)
+- **Prompt đã dùng:**  
+  *"Thêm chế độ sáng tối và chọn màu theme cho website VibeMix Studio."*
+- **Ý tưởng & Kỹ thuật triển khai:**  
+  - **Chế độ Sáng / Tối (Dark/Light Mode):**  
+    + Bổ sung nút chuyển đổi với icon Mặt trăng / Mặt trời trên Header (`#theme-mode-btn`).  
+    + Sử dụng thuộc tính `data-theme="light"` trên thẻ `<html>` để ghi đè các biến CSS (nền trắng ngà `#f4f6fa`, chữ đen than `#0f172a`, card trắng sang trọng, bóng đổ dịu nhẹ).  
+    + Tự động lưu cấu hình người dùng vào `localStorage` (`vibemix_theme`) để duy trì trạng thái khi người dùng tải lại trang.  
+  - **Bộ chọn màu Theme (Accent Color Palette):**  
+    + Thiết kế 5 chấm màu (Color Dots) trực quan trên Header: **Vàng Hoàng Kim (Gold)**, **Xanh Cyan Neon (Cyan)**, **Hồng Neon EDM (Pink)**, **Xanh Lá Điện Tử (Green)**, **Tím Vũ Trụ (Purple)**.  
+    + Khi click vào từng chấm màu, áp dụng `data-accent="..."` và tự động cập nhật lại các biến `--primary-color`, `--primary-hover`, `--primary-glow`, v.v. trên toàn bộ hệ thống giao diện (bàn mix, viền LED, icon, nút bấm, equalizer).  
+    + Ghi nhớ lựa chọn màu sắc qua `localStorage` (`vibemix_accent`).
+- **Kết quả AI tạo ra:**  
+  Website có khả năng tùy biến giao diện cực kỳ phong phú và hiện đại. Người dùng có thể tự do phối hợp giữa giao diện Sáng hoặc Tối với 5 tone màu neon yêu thích chỉ bằng một cú nhấp chuột.
+
+---
+
 ## 3. Đánh giá cá nhân về quá trình Vibe Coding
 
 ### AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?

@@ -44,8 +44,24 @@
         </ul>
       </nav>
 
-      <!-- Quick CTA -->
+      <!-- Theme Controls & Quick CTA -->
       <div class="header-actions">
+        <div class="theme-controls" aria-label="Bộ điều khiển giao diện">
+          <!-- Color Palette Picker -->
+          <div class="color-palette-picker" title="Chọn màu sắc chủ đạo">
+            <button type="button" class="color-dot dot-gold active" data-color="gold" aria-label="Màu Vàng Neon"></button>
+            <button type="button" class="color-dot dot-cyan" data-color="cyan" aria-label="Màu Xanh Cyan"></button>
+            <button type="button" class="color-dot dot-pink" data-color="pink" aria-label="Màu Hồng Neon"></button>
+            <button type="button" class="color-dot dot-green" data-color="green" aria-label="Màu Xanh Lá"></button>
+            <button type="button" class="color-dot dot-purple" data-color="purple" aria-label="Màu Tím"></button>
+          </div>
+
+          <!-- Dark / Light Mode Toggle Button -->
+          <button type="button" class="btn-theme-mode" id="theme-mode-btn" aria-label="Chuyển chế độ sáng/tối" title="Chuyển chế độ Sáng / Tối">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
+
         <a href="#studio-player" class="btn btn-primary animate__animated animate__pulse animate__infinite">
           <i class="fa-solid fa-play"></i> Mở Mixer
         </a>
@@ -771,7 +787,66 @@
           btn.innerHTML = '<i class="fa-solid fa-play"></i> Play';
         }
       });
-    });
+    // ==========================================
+    // THEME CONTROLLER (LIGHT/DARK MODE & COLOR PICKER)
+    // ==========================================
+    (function initThemeController() {
+      const themeModeBtn = document.getElementById('theme-mode-btn');
+      const colorDots = document.querySelectorAll('.color-dot');
+
+      // 1. Phục hồi trạng thái Dark / Light Mode đã lưu
+      const savedTheme = localStorage.getItem('vibemix_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+
+      // 2. Phục hồi Accent Color đã lưu
+      const savedAccent = localStorage.getItem('vibemix_accent') || 'gold';
+      document.documentElement.setAttribute('data-accent', savedAccent);
+      updateActiveDot(savedAccent);
+
+      // Bật / Tắt Dark & Light Mode
+      if (themeModeBtn) {
+        themeModeBtn.addEventListener('click', () => {
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+          const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', nextTheme);
+          localStorage.setItem('vibemix_theme', nextTheme);
+          updateThemeIcon(nextTheme);
+        });
+      }
+
+      function updateThemeIcon(theme) {
+        if (!themeModeBtn) return;
+        const icon = themeModeBtn.querySelector('i');
+        if (theme === 'light') {
+          icon.className = 'fa-solid fa-sun';
+          themeModeBtn.title = 'Chuyển sang chế độ Tối (Dark Mode)';
+        } else {
+          icon.className = 'fa-solid fa-moon';
+          themeModeBtn.title = 'Chuyển sang chế độ Sáng (Light Mode)';
+        }
+      }
+
+      // Xử lý chọn màu chủ đạo (Accent Color Picker)
+      colorDots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const color = dot.getAttribute('data-color');
+          document.documentElement.setAttribute('data-accent', color);
+          localStorage.setItem('vibemix_accent', color);
+          updateActiveDot(color);
+        });
+      });
+
+      function updateActiveDot(color) {
+        colorDots.forEach(dot => {
+          if (dot.getAttribute('data-color') === color) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+    })();
   </script>
 </body>
 </html>
